@@ -75,14 +75,14 @@ public class Transaction {
 				System.out.println("Enter Name to Search");
 				String nm = sc.next();
 				System.out.println(nm);
-				s = Records.A.stream().filter(m->m.getName().equals(nm)).collect(Collectors.toList()).get(0);
+				s = (Student) Records.A.stream().filter(m->m.getName().equals(nm)).collect(Collectors.toList()).get(0);
 				System.out.println(s);
 				break;
 				
 			case 3 :
 				System.out.println("Enter the city to search : ");
 			    String city = sc.next();
-			    List<Student> L1 = Records.A.stream().filter(m->m.getCity().equals(city)).collect(Collectors.toList());
+			    List<Object> L1 = Records.A.stream().filter(m->m.getCity().equals(city)).collect(Collectors.toList());
 			    L1.forEach(m->{System.out.println(m);});
 			    break;
 			
